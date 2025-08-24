@@ -44,6 +44,18 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public ProductDTO update(Long id, ProductDTO productDTO) {
+       if (!repository.existsById(id)) {
+            throw new ProductNotFoundException("Product with id " + id + " not found");
+        }
+        if (productDTO.price() <= 0) {
+            throw new ProductInvalidArgumentException("Price: " + productDTO.price());
+        }
+        Product product = repository.save(mapper.toProduct(productDTO));
+        return mapper.toProductDTO(product);
+    }
+
+    @Override
     public void deleteById(Long id) {
         if (!repository.existsById(id)) {
             throw new ProductNotFoundException("Product with id " + id + " not found");

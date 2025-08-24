@@ -59,4 +59,5 @@ curl -X PUT "http://localhost:8080/products/5" \
            "description": "Ergonomic wireless mouse",
            "price": 199.99
          }'
+         
 ```

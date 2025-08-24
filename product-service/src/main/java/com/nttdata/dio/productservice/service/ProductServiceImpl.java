@@ -6,9 +6,11 @@ import com.nttdata.dio.productservice.exception.ProductNotFoundException;
 import com.nttdata.dio.productservice.mapper.ProductMapper;
 import com.nttdata.dio.productservice.model.Product;
 import com.nttdata.dio.productservice.repository.ProductRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
     private final ProductRepository repository;
     private final ProductMapper mapper;
@@ -34,7 +36,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO save(ProductDTO productDTO) {
-        if (productDTO.price() < 0) {
+        if (productDTO.price() <= 0) {
             throw new ProductInvalidArgumentException("Price: " + productDTO.price());
         }
         Product product = repository.save(mapper.toProduct(productDTO));

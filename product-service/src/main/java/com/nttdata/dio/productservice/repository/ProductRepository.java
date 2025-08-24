@@ -3,7 +3,6 @@ package com.nttdata.dio.productservice.repository;
 import com.nttdata.dio.productservice.dto.ProductDTO;
 import com.nttdata.dio.productservice.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 import java.util.Optional;

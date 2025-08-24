@@ -24,7 +24,6 @@ public class ProductNotFoundException extends RuntimeException implements ErrorR
         ProblemDetail problemDetail =
                 ProblemDetail.forStatusAndDetail(getStatusCode(), getMessage());
         problemDetail.setTitle("Product not found");
-        problemDetail.setProperty("errorMessage", errorMessage);
         return problemDetail;
     }
 }

@@ -1,7 +1,7 @@
 package com.nttdata.dio.orderservice.dto;
 
 public record ProductDTO(
-        Long productId,
+        Long id,
         String name,
         String description,
         Double price

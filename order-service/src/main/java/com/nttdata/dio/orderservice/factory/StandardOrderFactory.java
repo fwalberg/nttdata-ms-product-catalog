@@ -59,7 +59,7 @@ public class StandardOrderFactory implements OrderFactory {
 
         return productService.findByIds(productIds)
                 .stream()
-                .collect(Collectors.toMap(ProductDTO::productId, Function.identity()));
+                .collect(Collectors.toMap(ProductDTO::id, Function.identity()));
     }
 
     private OrderItem createOrderItem(OrderItemRequest request, Map<Long, ProductDTO> productMap) {

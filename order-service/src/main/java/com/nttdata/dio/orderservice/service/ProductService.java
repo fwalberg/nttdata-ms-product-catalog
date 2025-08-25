@@ -1,8 +1,8 @@
 package com.nttdata.dio.orderservice.service;
 
 import com.nttdata.dio.orderservice.dto.ProductDTO;
+import com.nttdata.dio.orderservice.exception.OrderProductNotFoundException;
 import com.nttdata.dio.orderservice.feign.ProductFeignClient;
-import com.nttdata.dio.productservice.exception.ProductNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -20,11 +20,11 @@ public class ProductService {
         try {
             ProductDTO product = productFeignClient.findById(productId).getBody();
             if (product == null) {
-                throw new ProductNotFoundException("Product not found or inactive: " + productId);
+                throw new OrderProductNotFoundException("Product not found or inactive: " + productId);
             }
             return product;
         } catch (Exception e) {
-            throw new ProductNotFoundException("Product not found: " + productId);
+            throw new OrderProductNotFoundException("Product not found: " + productId);
         }
     }
 
@@ -37,7 +37,7 @@ public class ProductService {
             }
             return productDTOList;
         } catch (Exception e) {
-            throw new ProductNotFoundException("Error fetching products");
+            throw new OrderProductNotFoundException("Error fetching products");
         }
     }
 

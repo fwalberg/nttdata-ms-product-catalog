@@ -3,7 +3,6 @@ package com.nttdata.dio.orderservice.service;
 import com.nttdata.dio.orderservice.dto.CreateOrderRequest;
 import com.nttdata.dio.orderservice.enuns.OrderType;
 import com.nttdata.dio.orderservice.model.Order;
-import com.nttdata.dio.orderservice.repository.Productclient;
 import org.springframework.stereotype.Service;
 
 @Service

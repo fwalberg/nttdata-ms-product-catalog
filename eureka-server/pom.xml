@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nttdata.dio</groupId>
-    <artifactId>discorvey-server</artifactId>
+    <artifactId>eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>discorvey-server</name>
+    <name>eureka-server</name>
     <description>discorvey-server</description>
     <url/>
     <licenses>
